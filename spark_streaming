@@ -11,9 +11,9 @@ object lab1 {
    
     val sparkConf = new SparkConf().setAppName("wordcount").setMaster("local[*]")
     val sparkcontext = new SparkContext(sparkConf)
-    sparkcontext.setLogLevel("ERROR")
+    sparkcontext.setLogLevel("WARN")
     // Create the context
-    val ssc = new StreamingContext(sparkcontext, Seconds(10))
+    val ssc = new StreamingContext(sparkcontext, Seconds(20))
   
     // stream to count words in new files created
     //val lines = ssc.textFileStream("hdfs://localhost:54310/user/hduser/streamdata/")
